@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เช็กอาการไข้เลือดออก</title>
+  <style>
+    body {
+      font-family: 'Sarabun', 'Prompt', sans-serif;
+      background-color: #FF9F1C;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      margin: 0;
+    }
+
+    /* กรอบหลัก d1 */
+    .d1-box {
+      width: 100%;
+      max-width: 850px;
+      background-color: #06D6A0;
+      border: 3px solid #1a1a1a;
+      border-radius: 24px;
+      padding: 40px 20px;
+      text-align: center;
+      box-sizing: border-box;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 35px;
+    }
+
+    .d1-title {
+      font-weight: bold;
+      font-size: 24px;
+      color: #1a1a1a;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* คอนเทนเนอร์สำหรับจัดวาง e1 - e5 */
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 850px;
+    }
+
+    /* แถวบน e1, e2, e3 */
+    .row-top {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    /* แถวล่าง e4, e5 */
+    .row-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    /* การ์ด e1 - e5 */
+    .e-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 220px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ข้อความด้านบนกรอบสี่เหลี่ยม */
+    .e-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 10px;
+      text-align: center;
+      min-height: 42px; /* ให้ความสูงเท่ากันแม้วิธีบรรทัดไม่เท่ากัน */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* กรอบสี่เหลี่ยมสี #06D6A0 */
+    .e-box {
+      width: 100%;
+      height: 110px;
+      background-color: #06D6A0;
+      border: 3px solid #1a1a1a;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    /* เอฟเฟกต์เมื่อวางเมาส์เพื่อบอกว่าเป็นลิงก์คลิกได้ */
+    .e-card {
+  transition: transform 0.2s ease;
+}
+
+.e-card:hover {
+  transform: translateY(-6px);
+}
+
+.e-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* ภาพขยายเบาๆ ด้านใน */
+.e-card:hover .e-box img {
+  transform: scale(1.08);
+}
+
+@media (max-width: 600px) {
+  .e-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- กรอบ d1 -->
+  <div class="d1-box">
+    <h1 class="d1-title">ไข้สูงอย่าเพิ่งวางใจ! ชวนมาเช็กอาการไข้เลือดออกฉบับอ่านสบาย ไม่งงแน่นอน</h1>
+  </div>
+
+  <!-- โครงสร้าง e1 - e5 -->
+  <div class="grid-container">
+    
+    <!-- แถวบน: e1, e2, e3 -->
+    <div class="row-top">
+      
+      <!-- e1 -->
+      <a href="1.ยุงลายไม่ได้กัดแค่ตอนกลางวัน.html" class="e-card">
+        <div class="e-label">ยุงลายไม่ได้กัดแค่ตอนกลางวัน</div>
+        <div class="e-box">
+          <img src="รูป/img_mosquito.jpg.jpg" alt="ยุงลายไม่ได้กัดแค่ตอนกลางวัน">
+        </div>
+      </a>
+
+      <!-- e2 -->
+      <a href="2.ไข้หวัดธรรมดา หรือ ไข้เลือดออก.html" class="e-card">
+        <div class="e-label">ไข้หวัดธรรมดา หรือ ไข้เลือดออก?</div>
+        <div class="e-box">
+          <img src="รูป/img_sick.jpg.jpg" alt="ไข้หวัดธรรมดา หรือ ไข้เลือดออก?">
+        </div>
+      </a>
+
+      <!-- e3 -->
+      <a href="3.ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย.html" class="e-card">
+        <div class="e-label">ระยะวิกฤต: ไข้ลดไม่ได้แปลว่าหาย</div>
+        <div class="e-box">
+          <img src="รูป/img_warn.jpg.png" alt="ระยะวิกฤต: ไข้ลดไม่ได้แปลว่าหาย">
+        </div>
+      </a>
+
+    </div>
+
+    <!-- แถวล่าง: e4, e5 -->
+    <div class="row-bottom">
+      
+      <!-- e4 -->
+      <a href="4.ยาที่ห้ามกินเด็ดขาด.html" class="e-card">
+        <div class="e-label">ยาที่ห้ามกินเด็ดขาด!</div>
+        <div class="e-box">
+          <img src="รูป/img_Treatment%20drugs.jpg.jpg" alt="ยาที่ห้ามกินเด็ดขาด!">
+        </div>
+      </a>
+
+      <!-- e5 -->
+      <a href="5.จุดอับในบ้านที่ยุงลายชอบวางไข่.html" class="e-card">
+        <div class="e-label">5 จุดอับในบ้านที่ยุงลายชอบวางไข่</div>
+        <div class="e-box">
+          <img src="รูป/img_shield.jpg.jpg" alt="5 จุดอับในบ้านที่ยุงลายชอบวางไข่">
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

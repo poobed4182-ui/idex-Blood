@@ -1,0 +1,207 @@
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ยาที่ห้ามกินเด็ดขาด!</title>
+  <style>
+    body {
+      font-family: 'Sarabun', 'Prompt', sans-serif;
+      background-color: #FF9F1C;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .page-container {
+      width: 100%;
+      max-width: 850px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .top-row {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .b1-box {
+      width: 80px;
+      height: 80px;
+      background-color: #06D6A0;
+      border: 3px solid #1a1a1a;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .b1-box img {
+      max-width: 60%;
+      max-height: 60%;
+      object-fit: contain;
+    }
+
+    .b3-box {
+      flex: 1;
+      height: 80px;
+      background-color: #06D6A0;
+      border: 3px solid #1a1a1a;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      padding: 0 25px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .b3-title {
+      color: #0F382C;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .b2-box {
+      width: 100%;
+      min-height: 450px;
+      background-color: #06D6A0;
+      border: 3px solid #1a1a1a;
+      border-radius: 24px;
+      padding: 35px;
+      box-sizing: border-box;
+      color: #1a1a1a;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .b2-content {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* กล่องเตือนภัยยาอันตราย */
+    .danger-card {
+      background-color: #EF476F;
+      color: #ffffff;
+      border: 2.5px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .danger-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .danger-card p {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .danger-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* กล่องแนะนำยาที่ปลอดภัย */
+    .safe-card {
+      background-color: #ffffff;
+      color: #1a1a1a;
+      border: 2.5px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .safe-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      color: #0F382C;
+    }
+
+    .safe-card p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .divider {
+      border: none;
+      border-top: 2px dashed #1a1a1a;
+      opacity: 0.3;
+      margin: 20px 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #F8F9FA;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .top-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .b1-box {
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+    
+    <div>
+     <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+    </div>
+
+    <div class="top-row">
+      <div class="b1-box">
+        <img src="https://api.iconify.design/lucide:pill.svg?color=%230F382C" alt="icon">
+      </div>
+
+      <div class="b3-box">
+        <h2 class="b3-title">ยาที่ห้ามกินเด็ดขาด!</h2>
+      </div>
+    </div>
+
+    <div class="b2-box">
+      <div class="b2-content">
+        
+        <div class="danger-card">
+          <h3>🚫 กลุ่มยาอันตรายที่ห้ามรับประทาน (NSAIDs)</h3>
+          <p><strong>ห้ามกินเด็ดขาด:</strong> ยาแก้ปวดลดไข้กลุ่มไอบูโพรเฟน (Ibuprofen), แอสไพริน (Aspirin) และเมเฟนามิก (Mefenamic Acid)</p>
+          <p><strong>ทำไมถึงห้าม?:</strong> ยาในกลุ่มนี้มีฤทธิ์กัดกระเพาะ และทำให้การทำงานของเกล็ดเลือดผิดปกติ เลือดหยุดไหลยาก เสี่ยงต่อภาวะเลือดออกในกระเพาะอาหารจนอันตรายถึงชีวิต!</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="safe-card">
+          <h3>✅ ยาลดไข้ที่ปลอดภัย</h3>
+          <p>ให้ใช้เฉพาะ <strong>พาราเซตามอล (Paracetamol)</strong> ในปริมาณที่เหมาะสมตามน้ำหนักตัว และเน้นการเช็ดตัวลดไข้เป็นระยะ</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
