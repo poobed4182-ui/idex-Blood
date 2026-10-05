@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="UTF-8"><title>Netlify Form Detection</title></head>
+<body>
+  <form name="mosquito-risk-report" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="mosquito-risk-report">
+    <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <input name="reporterName">
+    <input name="contactPhone">
+    <input name="locationArea">
+    <select name="hazardType">
+      <option value="water-container">ภาชนะหรือโอ่งน้ำไม่มีฝาปิด</option>
+      <option value="tires-trash">ยางรถยนต์เก่าหรือเศษขยะ</option>
+      <option value="plant-saucer">จานรองกระถางต้นไม้</option>
+      <option value="drainage">ท่อหรือรางระบายน้ำขัง</option>
+      <option value="other">จุดเสี่ยงอื่นๆ</option>
+    </select>
+    <textarea name="details"></textarea>
+  </form>
+</body>
+</html>

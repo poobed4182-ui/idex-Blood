@@ -1,237 +1,168 @@
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5 จุดอับในบ้านที่ยุงลายชอบวางไข่</title>
+  <title>5 จุดอับในบ้านที่ยุงลายชอบวางไข่ | idex-Blood</title>
+  <meta name="description" content="สำรวจและทำลายแหล่งเพาะพันธุ์ลูกน้ำยุงลาย 5 จุดอับในบ้าน พร้อมมาตรการ 3 เก็บ ป้องกัน 3 โรค">
+  <meta property="og:site_name" content="idex-Blood เช็กอาการไข้เลือดออก">
+  <meta property="og:title" content="5 จุดอับในบ้านที่ยุงลายชอบวางไข่ | idex-Blood">
+  <meta property="og:description" content="Checklist สำรวจ 5 จุดเสี่ยงวางไข่: จานรองกระถาง, ยางรถยนต์, แจกันดอกไม้, โอ่งน้ำ, ขารองตู้กับข้าว">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
   <style>
-    body {
-      font-family: 'Sarabun', 'Prompt', sans-serif;
-      background-color: #FF9F1C;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .page-container {
-      width: 100%;
-      max-width: 850px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .top-row {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .b1-box {
-      width: 80px;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b1-box img {
-      max-width: 60%;
-      max-height: 60%;
-      object-fit: contain;
-    }
-
-    .b3-box {
-      flex: 1;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      padding: 0 25px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b3-title {
-      color: #0F382C;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    .b2-box {
-      width: 100%;
-      min-height: 450px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 24px;
-      padding: 35px;
-      box-sizing: border-box;
-      color: #1a1a1a;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .b2-content {
-      font-size: 18px;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .b2-content > p {
-      font-size: 18px;
-      font-weight: bold;
-      color: #0F382C;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
     .spot-card {
       background-color: #ffffff;
       border: 2.5px solid #1a1a1a;
       border-radius: 16px;
-      padding: 15px 20px;
-      margin-bottom: 12px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
       display: flex;
       align-items: flex-start;
-      gap: 15px;
+      gap: 16px;
+      box-shadow: 3px 3px 0 #1a1a1a;
     }
-
     .spot-number {
       background-color: #FFD166;
       color: #1a1a1a;
       border: 2px solid #1a1a1a;
       border-radius: 50%;
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      font-size: 18px;
+      font-weight: 800;
+      font-size: 1.15rem;
       flex-shrink: 0;
       margin-top: 2px;
     }
-
     .spot-details {
       flex: 1;
     }
-
-    .spot-details h4 {
-      margin: 0 0 4px 0;
-      font-size: 17px;
+    .spot-details h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.15rem;
       color: #0F382C;
-      font-weight: bold;
+      font-weight: 800;
     }
-
     .spot-details p {
       margin: 0;
-      font-size: 15px;
+      font-size: 1rem;
       color: #333333;
-      line-height: 1.5;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: #F8F9FA;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .back-btn:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 480px) {
-      .top-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .b1-box {
-        align-self: center;
-      }
-      .spot-card {
-        padding: 12px 15px;
-      }
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
-  <div class="page-container">
+  <!-- Top User & Account Menu -->
+  <nav id="accountMenu" class="account-nav" aria-label="เมนูผู้ใช้งาน" hidden></nav>
+
+  <div class="page-wrapper">
     
     <div>
-     <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+      <a class='btn-nav' href='/'>← กลับหน้าหลัก</a>
     </div>
 
-    <div class="top-row">
-      <div class="b1-box">
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="article-icon-box">
         <img src="https://api.iconify.design/lucide:home.svg?color=%230F382C" alt="icon">
       </div>
-
-      <div class="b3-box">
-        <h2 class="b3-title">5 จุดอับในบ้านที่ยุงลายชอบวางไข่</h2>
+      <div class="article-title-box">
+        <h1>5 จุดอับในบ้านที่ยุงลายชอบวางไข่</h1>
       </div>
-    </div>
+    </header>
 
-    <div class="b2-box">
-      <div class="b2-content">
-        <p>🏠 สำรวจและทำลายแหล่งเพาะพันธุ์ลูกน้ำยุงลายง่ายๆ ด้วย Checklist นี้:</p>
+    <!-- Main Article Body -->
+    <article class="article-content-card">
+      <div style="font-size: 1.1rem; line-height: 1.8;">
 
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 24px; background: #fff; padding: 16px; border-radius: 16px; border: 2px solid #1a1a1a;">
+          <img src="รูป/img_shield.jpg.jpg" alt="การป้องกันกำจัดแหล่งเพาะพันธุ์ยุงลาย" style="width: 140px; height: 110px; object-fit: cover; border-radius: 12px; border: 2px solid #1a1a1a;">
+          <div style="flex: 1; min-width: 240px;">
+            <span style="background: #FFD166; padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; border: 1.5px solid #1a1a1a;">บทที่ 5 จาก 5</span>
+            <h2 style="margin: 6px 0; font-size: 1.3rem; color: #0F382C;">มาตรการตัดวงจรชีวิตยุงลาย (3 เก็บ ป้องกัน 3 โรค)</h2>
+            <p style="margin: 0; font-size: 0.95rem; color: #4A5568;">สำรวจบ้านสัปดาห์ละครั้ง เพื่อป้องกันโรคไข้เลือดออก โรคติดเชื้อไวรัสซิกา และโรคไข้ปวดข้อยุงลาย</p>
+          </div>
+        </div>
+
+        <p style="font-size: 1.15rem; font-weight: 800; color: #0F382C; margin-top: 0; margin-bottom: 20px;">
+          🏠 สำรวจและทำลายแหล่งเพาะพันธุ์ลูกน้ำยุงลายง่ายๆ ด้วย Checklist นี้:
+        </p>
+
+        <!-- Spot 1 -->
         <div class="spot-card">
           <div class="spot-number">1</div>
           <div class="spot-details">
-            <h4>🪴 จานรองกระถางต้นไม้</h4>
-            <p>น้ำขังจากการรดน้ำต้นไม้คือแหล่งวางไข่ชั้นดี (ควรเทน้ำทิ้งทุกๆ 7 วัน)</p>
+            <h3>🪴 จานรองกระถางต้นไม้</h3>
+            <p>น้ำขังจากการรดน้ำต้นไม้คือแหล่งวางไข่ชั้นยอดของยุงลาย เพราะน้ำนิ่งและอยู่ในที่ร่ม <strong>วิธีกำจัด:</strong> เทน้ำทิ้งทุก 7 วัน หรือใส่ทรายหยาบ/กรวดในจานรองให้ดูดซับน้ำ</p>
           </div>
         </div>
 
+        <!-- Spot 2 -->
         <div class="spot-card">
           <div class="spot-number">2</div>
           <div class="spot-details">
-            <h4>🛞 ยางรถยนต์เก่า / เศษขยะนอกบ้าน</h4>
-            <p>แอ่งน้ำขังขนาดเล็กในเศษพลาสติกหรือยางรถยนต์เก่าเป็นที่วางไข่ยอดฮิต</p>
+            <h3>🛞 ยางรถยนต์เก่า / เศษขยะนอกบ้าน</h3>
+            <p>แอ่งน้ำขังขนาดเล็กในยางรถยนต์ เปลือกมะพร้าว กะลา ถุงพลาสติก หรือกระป๋อง ยุงลายชอบมากเป็นพิเศษ <strong>วิธีกำจัด:</strong> เจาะรูระบายน้ำ คลุมผ้าใบให้มิดชิด หรือรวบรวมทิ้งทำลายอย่างถูกวิธี</p>
           </div>
         </div>
 
+        <!-- Spot 3 -->
         <div class="spot-card">
           <div class="spot-number">3</div>
           <div class="spot-details">
-            <h4>💐 แจกันดอกไม้ / หิ้งพระ</h4>
-            <p>น้ำใสนิ่งในแจกันคือจุดที่คนมักมองข้าม (ควรหมั่นเปลี่ยนน้ำบ่อยๆ)</p>
+            <h3>💐 แจกันดอกไม้ / หิ้งพระ</h3>
+            <p>น้ำใสนิ่งในแจกันไหว้พระหรือแจกันพลูด่าง เป็นจุดที่คนในบ้านมองข้ามบ่อยที่สุด <strong>วิธีกำจัด:</strong> หมั่นเปลี่ยนถ่ายน้ำและล้างภาชนะทุกวันพระ หรือทุก 5–7 วัน</p>
           </div>
         </div>
 
+        <!-- Spot 4 -->
         <div class="spot-card">
           <div class="spot-number">4</div>
           <div class="spot-details">
-            <h4>🪣 ถังเก็บน้ำ / โอ่งน้ำที่ไม่มีฝาปิด</h4>
-            <p>ควรปิดฝาให้มิดชิด หรือใส่ทรายอะเบท (Abate) เพื่อกำจัดลูกน้ำยุงลาย</p>
+            <h3>🪣 ถังเก็บน้ำ / โอ่งน้ำที่ไม่มีฝาปิด</h3>
+            <p>ภาชนะกักเก็บน้ำใช้ในห้องน้ำหรือรอบบ้าน <strong>วิธีกำจัด:</strong> ปิดฝาโอ่งหรือถังให้มิดชิด หรือปล่อยปลากินลูกน้ำ (เช่น ปลาหางนกยูง) หรือใส่ทรายอะเบท (Abate 1% ในอัตราส่วน 1 กรัม ต่อน้ำ 10 ลิตร)</p>
           </div>
         </div>
 
+        <!-- Spot 5 -->
         <div class="spot-card">
           <div class="spot-number">5</div>
           <div class="spot-details">
-            <h4>🐜 ขารองตู้กับข้าว</h4>
-            <p>น้ำที่ใส่ไว้กันมด สามารถใส่เกลือ หรือผงซักฟอกลงไปเพื่อป้องกันยุงลายมาวางไข่ได้</p>
+            <h3>🐜 ขารองตู้กับข้าว</h3>
+            <p>น้ำที่ใส่ไว้กันมดตามขาตู้ มักกลายเป็นแหล่งเพาะพันธุ์ยุงลายโดยไม่รู้ตัว <strong>วิธีกำจัด:</strong> เติมเกลือแกง ผงซักฟอก น้ำส้มสายชู หรือขี้เถ้าลงในน้ำ เพื่อปรับสภาพไม่ให้ยุงลายสามารถวางไข่ได้</p>
           </div>
         </div>
 
+        <div style="margin-top: 24px; background: #fff; padding: 20px; border-radius: 16px; border: 2.5px solid #1a1a1a; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <strong style="color: #073B4C; font-size: 1.05rem;">พบจุดเสี่ยงในชุมชนหรือโรงเรียน?</strong>
+            <p style="margin: 4px 0 0; font-size: 0.95rem; color: #4A5568;">ส่งข้อมูลพิกัดเพื่อให้เพื่อนๆ และหน่วยงานร่วมเฝ้าระวัง</p>
+          </div>
+          <a class='btn-nav' href='/#community-report' style='background: #06D6A0;'>
+            📢 แจ้งพิกัดจุดเสี่ยงยุงลาย ➔
+          </a>
+        </div>
+
       </div>
-    </div>
+
+      <!-- Navigation Footer -->
+      <div class="article-nav-buttons">
+        <a href="4.ยาที่ห้ามกินเด็ดขาด.html" class="btn-nav">⬅ บทก่อนหน้า: ยาที่ห้ามกินเด็ดขาด!</a>
+        <a class='btn-nav' href='/' style='background: #FFD166;'>🏠 กลับสู่หน้าแรกและแบบประเมิน</a>
+      </div>
+    </article>
 
   </div>
 
+  <script type="module">
+    import { setupUserNavbar } from "./assets/js/auth.js";
+    setupUserNavbar();
+  </script>
+
 </body>
 </html>
+

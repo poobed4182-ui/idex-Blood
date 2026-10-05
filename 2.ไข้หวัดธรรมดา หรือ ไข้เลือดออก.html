@@ -1,217 +1,153 @@
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ไข้หวัดธรรมดา หรือ ไข้เลือดออก</title>
+  <title>ไข้หวัดธรรมดา หรือ ไข้เลือดออก? | idex-Blood</title>
+  <meta name="description" content="วิธีสังเกตอาการและตารางเปรียบเทียบความแตกต่างระหว่างไข้หวัดธรรมดาและไข้เลือดออกตั้งแต่ช่วง 3 วันแรก">
+  <meta property="og:site_name" content="idex-Blood เช็กอาการไข้เลือดออก">
+  <meta property="og:title" content="ไข้หวัดธรรมดา หรือ ไข้เลือดออก? | idex-Blood">
+  <meta property="og:description" content="ตารางเปรียบเทียบอาการเด่น: ไข้สูงลอย 38.5-40°C ปวดกระบอกตา และจุดเลือดออกใต้ผิวหนัง">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌡️</text></svg>">
   <style>
-    body {
-      font-family: 'Sarabun', 'Prompt', sans-serif;
-      background-color: #FF9F1C;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .page-container {
-      width: 100%;
-      max-width: 850px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .top-row {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .b1-box {
-      width: 80px;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b1-box img {
-      max-width: 60%;
-      max-height: 60%;
-      object-fit: contain;
-    }
-
-    .b3-box {
-      flex: 1;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      padding: 0 25px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b3-title {
-      color: #0F382C;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    .b2-box {
-      width: 100%;
-      min-height: 450px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 24px;
-      padding: 35px;
-      box-sizing: border-box;
-      color: #1a1a1a;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .b2-content {
-      font-size: 18px;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .b2-content p {
-      color: #0F382C;
-      font-weight: bold;
-      margin-top: 0;
-    }
-
-    .table-responsive {
+    .comparison-table-wrapper {
       width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      margin: 16px 0;
     }
-
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
       background-color: #ffffff;
       color: #1a1a1a;
-      border: 2px solid #1a1a1a;
-      border-radius: 12px;
+      border: 3px solid #1a1a1a;
+      border-radius: 14px;
       overflow: hidden;
     }
-
-    .comparison-table th,
-    .comparison-table td {
-      border: 1px solid #1a1a1a;
-      padding: 12px 14px;
+    .comparison-table th, .comparison-table td {
+      border: 1.5px solid #1a1a1a;
+      padding: 14px 16px;
       text-align: left;
       vertical-align: top;
-      font-size: 16px;
+      font-size: 1rem;
     }
-
     .comparison-table th {
-      background-color: #f8f9fa;
-      font-weight: bold;
+      background-color: #F8F9FA;
+      font-weight: 800;
       color: #0F382C;
+      font-size: 1.05rem;
     }
-
+    .comparison-table th.th-dengue {
+      background-color: #FFE5EC;
+      color: #991B1B;
+    }
     .comparison-table tr:nth-child(even) td {
-      background-color: #f7fff9;
+      background-color: #F9FFF9;
     }
-
     .comparison-table td:first-child {
-      font-weight: bold;
-      background-color: #eefbf4;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: #F8F9FA;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .back-btn:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 480px) {
-      .top-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .b1-box {
-        align-self: center;
-      }
+      font-weight: 700;
+      background-color: #EEFBF4;
+      white-space: nowrap;
     }
   </style>
 </head>
 <body>
 
-  <div class="page-container">
+  <!-- Top User & Account Menu -->
+  <nav id="accountMenu" class="account-nav" aria-label="เมนูผู้ใช้งาน" hidden></nav>
+
+  <div class="page-wrapper">
     
     <div>
-      <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+      <a class='btn-nav' href='/'>← กลับหน้าหลัก</a>
     </div>
 
-    <div class="top-row">
-      <div class="b1-box">
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="article-icon-box">
         <img src="https://api.iconify.design/lucide:thermometer.svg?color=%230F382C" alt="icon">
       </div>
-
-      <div class="b3-box">
-        <h2 class="b3-title">ไข้หวัดธรรมดา หรือ ไข้เลือดออก?</h2>
+      <div class="article-title-box">
+        <h1>ไข้หวัดธรรมดา หรือ ไข้เลือดออก?</h1>
       </div>
-    </div>
+    </header>
 
-    <div class="b2-box">
-      <div class="b2-content">
-        <p>💡 การสังเกตอาการช่วยให้แยกแยะโรคได้ตั้งแต่ช่วง 3 วันแรก:</p>
-        
-        <div class="table-responsive">
+    <!-- Main Article Body -->
+    <article class="article-content-card">
+      <div style="font-size: 1.1rem; line-height: 1.8;">
+
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 24px; background: #fff; padding: 16px; border-radius: 16px; border: 2px solid #1a1a1a;">
+          <img src="รูป/img_sick.jpg.jpg" alt="อาการไข้หวัดหรือไข้เลือดออก" style="width: 140px; height: 110px; object-fit: cover; border-radius: 12px; border: 2px solid #1a1a1a;">
+          <div style="flex: 1; min-width: 240px;">
+            <span style="background: #FFD166; padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; border: 1.5px solid #1a1a1a;">บทที่ 2 จาก 5</span>
+            <h2 style="margin: 6px 0; font-size: 1.3rem; color: #0F382C;">การวินิจฉัยแยกโรคเบื้องต้น</h2>
+            <p style="margin: 0; font-size: 0.95rem; color: #4A5568;">การสังเกตอาการอย่างละเอียดช่วยให้แยกแยะโรคได้ตั้งแต่ช่วง 3 วันแรกของการป่วย</p>
+          </div>
+        </div>
+
+        <p style="color: #0F382C; font-weight: 800; font-size: 1.15rem; margin-top: 0;">
+          💡 ตารางเปรียบเทียบจุดสังเกตสำคัญระหว่างไข้หวัดธรรมดาและไข้เลือดออก:
+        </p>
+
+        <div class="comparison-table-wrapper">
           <table class="comparison-table">
-            <tr>
-              <th>สังเกตอาการ</th>
-              <th>ไข้หวัดธรรมดา</th>
-              <th>ไข้เลือดออก</th>
-            </tr>
-            <tr>
-              <td>ลักษณะไข้</td>
-              <td>ไข้ค่อย ๆ ขึ้น มีไอ น้ำมูก เจ็บคอ</td>
-              <td>ไข้สูงลอยทันที 38.5–40°C ติดต่อกัน 2–7 วัน</td>
-            </tr>
-            <tr>
-              <td>อาการทางร่างกาย</td>
-              <td>ปวดศีรษะเล็กน้อย เลือดกำเดาไม่ไหล</td>
-              <td>ปวดเบ้าตา ปวดเมื่อยกล้ามเนื้อ ร่างกายอ่อนเพลียมาก</td>
-            </tr>
-            <tr>
-              <td>ผื่นและจุดเลือด</td>
-              <td>ไม่มี หรือเป็นผื่นแดงทั่วไป</td>
-              <td>มีจุดเลือดออกเล็ก ๆ ตามแขน ขา หรือหน้าอก</td>
-            </tr>
-            <tr>
-              <td>ระบบขับถ่าย</td>
-              <td>ปกติ</td>
-              <td>อาจมีอาการปวดท้อง คลื่นไส้ อาเจียน หรืออุจจาระสีดำ</td>
-            </tr>
+            <thead>
+              <tr>
+                <th style="width: 22%;">จุดสังเกตอาการ</th>
+                <th style="width: 39%;">🤧 ไข้หวัดธรรมดา (Common Cold)</th>
+                <th style="width: 39%;" class="th-dengue">🩸 ไข้เลือดออก (Dengue Fever)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ลักษณะของไข้</td>
+                <td>ไข้ค่อยๆ ขึ้น หรือไข้ต่ำถึงปานกลาง มักมีไอ จาม น้ำมูกไหล เจ็บคอ</td>
+                <td><strong>ไข้สูงลอยเฉียบพลัน 38.5–40°C</strong> ติดต่อกัน 2–7 วัน ทานยาลดไข้แล้วไข้มักไม่ลง มักไม่มีอาการไอหรือน้ำมูก</td>
+              </tr>
+              <tr>
+                <td>อาการทางร่างกาย</td>
+                <td>ปวดศีรษะเล็กน้อย ครั่นเนื้อครั่นตัว เลือดกำเดาไม่ไหล หายใจติดขัดเล็กน้อย</td>
+                <td><strong>ปวดกระบอกตาลึกๆ</strong> เมื่อกลอกตา ปวดเมื่อยกล้ามเนื้อและข้อกระดูกรุนแรง ใบหน้าแดง ตาแดง อ่อนเพลียมาก</td>
+              </tr>
+              <tr>
+                <td>ผื่นและจุดเลือด</td>
+                <td>ไม่มีผื่นเลือดออก อาจมีผื่นแพ้หรือผื่นแดงธรรมดา</td>
+                <td><strong>มีจุดเลือดออกสีแดงเล็กๆ</strong> คล้ายจุดเข็มหมุดตามแขน ขา ลำตัว รอยช้ำง่าย หรือทดสอบรัดแขน (Tourniquet Test) พบจุดเลือดออก</td>
+              </tr>
+              <tr>
+                <td>ระบบขับถ่าย / ท้อง</td>
+                <td>ทำงานปกติ ไม่มีอาการปวดท้อง</td>
+                <td><strong>คลื่นไส้ อาเจียน เบื่ออาหาร</strong> ปวดท้องใต้ชายโครงขวา (ตับโต) ในรายที่รุนแรงอาจถ่ายอุจจาระสีดำเหมือนยางมะตอย</td>
+              </tr>
+            </tbody>
           </table>
         </div>
+
+        <div style="background: #FFF; border: 2.5px solid #1A1A1A; border-radius: 16px; padding: 20px; margin-top: 24px;">
+          <h3 style="margin: 0 0 8px; color: #073B4C; font-size: 1.2rem; font-weight: 800;">🩺 เมื่อไหร่ควรไปโรงพยาบาลเพื่อเจาะเลือด?</h3>
+          <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+            หากมีไข้สูงเกิน 48 ชั่วโมง (2 วันขึ้นไป) โดยไม่มีอาการหวัดไอชัดเจน ควรรีบไปพบแพทย์เพื่อตรวจความสมบูรณ์ของเม็ดเลือด (CBC) ดูจำนวนเกล็ดเลือดและความเข้มข้นของเลือด (Hematocrit) หรือตรวจหาเชื้อเดงกีด้วยวิธี NS1 Antigen เพื่อการวินิจฉัยที่แม่นยำ
+          </p>
+        </div>
+
       </div>
-    </div>
+
+      <!-- Navigation Footer -->
+      <div class="article-nav-buttons">
+        <a href="1.ยุงลายไม่ได้กัดแค่ตอนกลางวัน.html" class="btn-nav">⬅ บทก่อนหน้า: ยุงลายไม่ได้กัดแค่ตอนกลางวัน</a>
+        <a href="3.ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย.html" class="btn-nav" style="background: #FFD166;">บทถัดไป: ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย ➔</a>
+      </div>
+    </article>
 
   </div>
 
+  <script type="module">
+    import { setupUserNavbar } from "./assets/js/auth.js";
+    setupUserNavbar();
+  </script>
+
 </body>
 </html>
+

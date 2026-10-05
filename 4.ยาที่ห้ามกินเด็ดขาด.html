@@ -1,207 +1,105 @@
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ยาที่ห้ามกินเด็ดขาด!</title>
-  <style>
-    body {
-      font-family: 'Sarabun', 'Prompt', sans-serif;
-      background-color: #FF9F1C;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .page-container {
-      width: 100%;
-      max-width: 850px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .top-row {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .b1-box {
-      width: 80px;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b1-box img {
-      max-width: 60%;
-      max-height: 60%;
-      object-fit: contain;
-    }
-
-    .b3-box {
-      flex: 1;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      padding: 0 25px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b3-title {
-      color: #0F382C;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    .b2-box {
-      width: 100%;
-      min-height: 450px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 24px;
-      padding: 35px;
-      box-sizing: border-box;
-      color: #1a1a1a;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .b2-content {
-      font-size: 18px;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    /* กล่องเตือนภัยยาอันตราย */
-    .danger-card {
-      background-color: #EF476F;
-      color: #ffffff;
-      border: 2.5px solid #1a1a1a;
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .danger-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 20px;
-      color: #ffffff;
-    }
-
-    .danger-card p {
-      margin: 0 0 10px 0;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .danger-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* กล่องแนะนำยาที่ปลอดภัย */
-    .safe-card {
-      background-color: #ffffff;
-      color: #1a1a1a;
-      border: 2.5px solid #1a1a1a;
-      border-radius: 16px;
-      padding: 20px;
-    }
-
-    .safe-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 20px;
-      color: #0F382C;
-    }
-
-    .safe-card p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .divider {
-      border: none;
-      border-top: 2px dashed #1a1a1a;
-      opacity: 0.3;
-      margin: 20px 0;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: #F8F9FA;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .back-btn:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 480px) {
-      .top-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .b1-box {
-        align-self: center;
-      }
-    }
-  </style>
+  <title>ยาที่ห้ามกินเด็ดขาด! | idex-Blood</title>
+  <meta name="description" content="ยากลุ่มอันตรายห้ามรับประทานเมื่อสงสัยไข้เลือดออก (NSAIDs ไอบูโพรเฟน แอสไพริน) และการใช้ยาพาราเซตามอลอย่างปลอดภัย">
+  <meta property="og:site_name" content="idex-Blood เช็กอาการไข้เลือดออก">
+  <meta property="og:title" content="ยาที่ห้ามกินเด็ดขาด! | idex-Blood">
+  <meta property="og:description" content="ยากลุ่ม NSAIDs มีฤทธิ์ทำให้เกล็ดเลือดผิดปกติ เลือดหยุดไหลยาก เสี่ยงต่อภาวะเลือดออกในทางเดินอาหารจนอันตรายถึงชีวิต">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚫</text></svg>">
 </head>
 <body>
 
-  <div class="page-container">
+  <!-- Top User & Account Menu -->
+  <nav id="accountMenu" class="account-nav" aria-label="เมนูผู้ใช้งาน" hidden></nav>
+
+  <div class="page-wrapper">
     
     <div>
-     <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+      <a class='btn-nav' href='/'>← กลับหน้าหลัก</a>
     </div>
 
-    <div class="top-row">
-      <div class="b1-box">
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="article-icon-box">
         <img src="https://api.iconify.design/lucide:pill.svg?color=%230F382C" alt="icon">
       </div>
-
-      <div class="b3-box">
-        <h2 class="b3-title">ยาที่ห้ามกินเด็ดขาด!</h2>
+      <div class="article-title-box">
+        <h1>ยาที่ห้ามกินเด็ดขาด!</h1>
       </div>
-    </div>
+    </header>
 
-    <div class="b2-box">
-      <div class="b2-content">
-        
-        <div class="danger-card">
-          <h3>🚫 กลุ่มยาอันตรายที่ห้ามรับประทาน (NSAIDs)</h3>
-          <p><strong>ห้ามกินเด็ดขาด:</strong> ยาแก้ปวดลดไข้กลุ่มไอบูโพรเฟน (Ibuprofen), แอสไพริน (Aspirin) และเมเฟนามิก (Mefenamic Acid)</p>
-          <p><strong>ทำไมถึงห้าม?:</strong> ยาในกลุ่มนี้มีฤทธิ์กัดกระเพาะ และทำให้การทำงานของเกล็ดเลือดผิดปกติ เลือดหยุดไหลยาก เสี่ยงต่อภาวะเลือดออกในกระเพาะอาหารจนอันตรายถึงชีวิต!</p>
+    <!-- Main Article Body -->
+    <article class="article-content-card">
+      <div style="font-size: 1.1rem; line-height: 1.8;">
+
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 24px; background: #fff; padding: 16px; border-radius: 16px; border: 2px solid #1a1a1a;">
+          <img src="รูป/img_Treatment%20drugs.jpg.jpg" alt="ยาที่ห้ามกินเด็ดขาดและยาปลอดภัย" style="width: 140px; height: 110px; object-fit: cover; border-radius: 12px; border: 2px solid #1a1a1a;">
+          <div style="flex: 1; min-width: 240px;">
+            <span style="background: #FFD166; padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; border: 1.5px solid #1a1a1a;">บทที่ 4 จาก 5</span>
+            <h2 style="margin: 6px 0; font-size: 1.3rem; color: #8C1833;">ข้อควรระวังเรื่องยาและอันตรายถึงชีวิต</h2>
+            <p style="margin: 0; font-size: 0.95rem; color: #4A5568;">การกินยาผิดชนิดอาจเปลี่ยนอาการธรรมดาให้กลายเป็นภาวะวิกฤตเลือดออกรุนแรง</p>
+          </div>
         </div>
 
-        <hr class="divider">
+        <!-- Danger Group Card -->
+        <div style="background-color: #EF476F; color: #ffffff; border: 3px solid #1a1a1a; border-radius: 18px; padding: 24px; margin-bottom: 24px; box-shadow: 4px 4px 0 #1a1a1a;">
+          <h3 style="margin: 0 0 12px 0; font-size: 1.35rem; color: #ffffff; font-weight: 800;">
+            🚫 กลุ่มยาอันตรายที่ห้ามรับประทานเด็ดขาด (NSAIDs และ ยาชุด)
+          </h3>
+          <p style="margin: 0 0 12px 0; font-size: 1.05rem; line-height: 1.6;">
+            <strong>รายชื่อยาที่ห้ามรับประทาน:</strong> ยาแก้ปวดลดไข้กลุ่มเอ็นเสด (NSAIDs) ทุกชนิด เช่น <strong>ไอบูโพรเฟน (Ibuprofen)</strong>, <strong>แอสไพริน (Aspirin)</strong>, <strong>เมเฟนามิก แอซิด (Mefenamic Acid / Ponstan)</strong>, ไดโคลฟีแนก (Diclofenac) และ <em>ยาชุดหรือยาซองแก้ปวดเมื่อย</em>
+          </p>
+          <div style="background: rgba(0, 0, 0, 0.15); padding: 14px 18px; border-radius: 12px; border: 1.5px solid rgba(255, 255, 255, 0.4);">
+            <strong style="color: #FFD166;">ทำไมถึงอันตรายถึงชีวิต?</strong>
+            <p style="margin: 4px 0 0; font-size: 0.98rem; line-height: 1.5;">
+              ในผู้ป่วยไข้เลือดออก ไวรัสจะทำให้เกล็ดเลือดลดต่ำลงอยู่แล้ว ยาในกลุ่ม NSAIDs จะยิ่งไปยับยั้งการเกาะกลุ่มของเกล็ดเลือด และกัดเยื่อบุกระเพาะอาหารอย่างรุนแรง ส่งผลให้เกิดแผลเลือดออกในกระเพาะอาหาร เลือดหยุดไหลยาก อาเจียนเป็นเลือด ถ่ายดำ และนำไปสู่การช็อกเสียชีวิตได้อย่างรวดเร็ว!
+            </p>
+          </div>
+        </div>
 
-        <div class="safe-card">
-          <h3>✅ ยาลดไข้ที่ปลอดภัย</h3>
-          <p>ให้ใช้เฉพาะ <strong>พาราเซตามอล (Paracetamol)</strong> ในปริมาณที่เหมาะสมตามน้ำหนักตัว และเน้นการเช็ดตัวลดไข้เป็นระยะ</p>
+        <hr style="border: none; border-top: 2px dashed #1a1a1a; opacity: 0.3; margin: 24px 0;">
+
+        <!-- Safe Medication Card -->
+        <div style="background-color: #ffffff; color: #1a1a1a; border: 3px solid #1a1a1a; border-radius: 18px; padding: 24px; box-shadow: 4px 4px 0 #1a1a1a;">
+          <h3 style="margin: 0 0 12px 0; font-size: 1.3rem; color: #0F382C; font-weight: 800;">
+            ✅ ยาลดไข้ชนิดเดียวที่ปลอดภัย: พาราเซตามอล (Paracetamol)
+          </h3>
+          <p style="margin: 0 0 12px 0; font-size: 1.05rem; line-height: 1.6;">
+            ให้ใช้เฉพาะ <strong>พาราเซตามอล</strong> ในปริมาณที่ถูกต้องเหมาะสมตามน้ำหนักตัว (10–15 มิลลิกรัม ต่อน้ำหนักตัว 1 กิโลกรัม ต่อครั้ง) รับประทานห่างกันไม่ต่ำกว่า 4–6 ชั่วโมงเมื่อมีไข้สูง
+          </p>
+          <ul style="margin: 0; padding-left: 20px; font-size: 0.98rem; line-height: 1.6;">
+            <li><strong>ห้ามรับประทานเกินขนาด:</strong> ไม่ควรทานเกิน 4–5 ครั้งต่อวัน หรือไม่เกิน 4,000 มิลลิกรัมต่อวัน เพื่อป้องกันภาวะตับวายเฉียบพลัน</li>
+            <li><strong>เน้นการเช็ดตัวลดไข้:</strong> ใช้ผ้าชุบน้ำอุณหภูมิห้องเช็ดตามข้อพับ ซอกคอ ลำตัว เพื่อช่วยระบายความร้อน ดีกว่าการโหมกินยาลดไข้ปริมาณมาก</li>
+            <li><strong>ดื่มน้ำเกลือแร่ (ORS):</strong> จิบน้ำเกลือแร่หรือน้ำผลไม้บ่อยๆ เพื่อทดแทนน้ำและเกลือแร่ที่สูญเสียไป ป้องกันภาวะขาดน้ำ</li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center;">
+          <a class='btn-nav' href='/#calculator' style='background: #06D6A0; font-size: 1rem; padding: 10px 20px;'>
+            🧮 ใช้งานเครื่องคำนวณขนาดยาพาราเซตามอลตามน้ำหนักตัว ➔
+          </a>
         </div>
 
       </div>
-    </div>
+
+      <!-- Navigation Footer -->
+      <div class="article-nav-buttons">
+        <a href="3.ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย.html" class="btn-nav">⬅ บทก่อนหน้า: ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย</a>
+        <a href="5.จุดอับในบ้านที่ยุงลายชอบวางไข่.html" class="btn-nav" style="background: #FFD166;">บทถัดไป: 5 จุดอับในบ้านที่ยุงลายชอบวางไข่ ➔</a>
+      </div>
+    </article>
 
   </div>
 
+  <script type="module">
+    import { setupUserNavbar } from "./assets/js/auth.js";
+    setupUserNavbar();
+  </script>
+
 </body>
 </html>
+
