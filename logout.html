@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>กำลังออกจากระบบ | idex-Blood</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .logout-card {
+      background: #06D6A0;
+      border: 3px solid #1a1a1a;
+      border-radius: 20px;
+      padding: 32px 40px;
+      box-shadow: 6px 6px 0 #1a1a1a;
+      max-width: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout-card">
+    <div style="font-size: 2.5rem; margin-bottom: 12px;">👋</div>
+    <h2 style="margin: 0 0 10px; font-weight: 800;">กำลังออกจากระบบ...</h2>
+    <p id="status" style="margin: 0; font-weight: 600; color: #0F382C;">ระบบกำลังล้างข้อมูลเซสชัน กรุณารอสักครู่</p>
+  </div>
+
+  <script type="module">
+    import { setLocalUser } from "./assets/js/auth.js";
+
+    const FIREBASE_CONFIG = {
+      apiKey: "AIzaSyCqP4MyuuIu4Vr2cTsIhFaFv_8fj8zfryg",
+      authDomain: "index-blood.firebaseapp.com",
+      projectId: "index-blood",
+      storageBucket: "index-blood.firebasestorage.app",
+      messagingSenderId: "944055889621",
+      appId: "1:944055889621:web:a0a3ffca69e178be5dbc5c",
+      measurementId: "G-PXN7T8E0DY"
+    };
+
+    setLocalUser(null);
+
+    (async () => {
+      try {
+        const { initializeApp, getApps, getApp } = await import("https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js");
+        const { getAuth, signOut } = await import("https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js");
+        const app = getApps().length ? getApp() : initializeApp(FIREBASE_CONFIG);
+        await signOut(getAuth(app));
+      } catch (err) {
+        console.warn("Firebase signout error:", err);
+      }
+      setTimeout(() => {
+        window.location.replace("login.html");
+      }, 500);
+    })();
+  </script>
+
+</body>
+</html>
+

@@ -3,196 +3,309 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เช็กอาการไข้เลือดออก</title>
-  <style>
-    body {
-      font-family: 'Sarabun', 'Prompt', sans-serif;
-      background-color: #FF9F1C;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      margin: 0;
-    }
-
-    /* กรอบหลัก d1 */
-    .d1-box {
-      width: 100%;
-      max-width: 850px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 24px;
-      padding: 40px 20px;
-      text-align: center;
-      box-sizing: border-box;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      margin-bottom: 35px;
-    }
-
-    .d1-title {
-      font-weight: bold;
-      font-size: 24px;
-      color: #1a1a1a;
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    /* คอนเทนเนอร์สำหรับจัดวาง e1 - e5 */
-    .grid-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      width: 100%;
-      max-width: 850px;
-    }
-
-    /* แถวบน e1, e2, e3 */
-    .row-top {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      width: 100%;
-      flex-wrap: wrap;
-    }
-
-    /* แถวล่าง e4, e5 */
-    .row-bottom {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      width: 100%;
-      flex-wrap: wrap;
-    }
-
-    /* การ์ด e1 - e5 */
-    .e-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 220px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ข้อความด้านบนกรอบสี่เหลี่ยม */
-    .e-label {
-      font-size: 15px;
-      font-weight: 600;
-      color: #1A1A1A;
-      margin-bottom: 10px;
-      text-align: center;
-      min-height: 42px; /* ให้ความสูงเท่ากันแม้วิธีบรรทัดไม่เท่ากัน */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* กรอบสี่เหลี่ยมสี #06D6A0 */
-    .e-box {
-      width: 100%;
-      height: 110px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-sizing: border-box;
-    }
-
-    /* เอฟเฟกต์เมื่อวางเมาส์เพื่อบอกว่าเป็นลิงก์คลิกได้ */
-    .e-card {
-  transition: transform 0.2s ease;
-}
-
-.e-card:hover {
-  transform: translateY(-6px);
-}
-
-.e-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-/* ภาพขยายเบาๆ ด้านใน */
-.e-card:hover .e-box img {
-  transform: scale(1.08);
-}
-
-@media (max-width: 600px) {
-  .e-card {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-  </style>
+  <title>เช็กอาการไข้เลือดออก | idex-Blood</title>
+  <meta name="description" content="ระบบให้ความรู้ ประเมินความเสี่ยง และเช็กอาการโรคไข้เลือดออกฉบับอ่านสบาย ไม่งงแน่นอน พร้อมข้อควรระวังยาอันตรายและสายด่วนฉุกเฉิน 1669">
+  <meta name="siteName" content="idex-Blood เช็กอาการไข้เลือดออก">
+  <meta name="siteDescription" content="ระบบให้ความรู้ ประเมินความเสี่ยง และเช็กอาการโรคไข้เลือดออกฉบับอ่านสบาย ไม่งงแน่นอน พร้อมข้อควรระวังยาอันตรายและสายด่วนฉุกเฉิน 1669">
+  <meta property="og:site_name" content="idex-Blood เช็กอาการไข้เลือดออก">
+  <meta property="og:title" content="ไข้สูงอย่าเพิ่งวางใจ! ชวนมาเช็กอาการไข้เลือดออกฉบับอ่านสบาย ไม่งงแน่นอน">
+  <meta property="og:description" content="คู่มือสุขภาพและแบบประเมินความเสี่ยงไข้เลือดออกเดงกีฉบับประชาชน รู้ทันอาการระยะวิกฤต ยาที่ห้ามกินเด็ดขาด และวิธีกำจัดแหล่งเพาะพันธุ์ยุงลาย">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩸</text></svg>">
 </head>
 <body>
 
-  <!-- กรอบ d1 -->
-  <div class="d1-box">
-    <h1 class="d1-title">ไข้สูงอย่าเพิ่งวางใจ! ชวนมาเช็กอาการไข้เลือดออกฉบับอ่านสบาย ไม่งงแน่นอน</h1>
-  </div>
+  <!-- Top User & Account Menu -->
+  <nav id="accountMenu" class="account-nav" aria-label="เมนูผู้ใช้งาน" hidden></nav>
 
-  <!-- โครงสร้าง e1 - e5 -->
-  <div class="grid-container">
+  <div class="page-wrapper">
     
-    <!-- แถวบน: e1, e2, e3 -->
-    <div class="row-top">
-      
-      <!-- e1 -->
-      <a href="1.ยุงลายไม่ได้กัดแค่ตอนกลางวัน.html" class="e-card">
-        <div class="e-label">ยุงลายไม่ได้กัดแค่ตอนกลางวัน</div>
-        <div class="e-box">
-          <img src="รูป/img_mosquito.jpg.jpg" alt="ยุงลายไม่ได้กัดแค่ตอนกลางวัน">
-        </div>
-      </a>
-
-      <!-- e2 -->
-      <a href="2.ไข้หวัดธรรมดา หรือ ไข้เลือดออก.html" class="e-card">
-        <div class="e-label">ไข้หวัดธรรมดา หรือ ไข้เลือดออก?</div>
-        <div class="e-box">
-          <img src="รูป/img_sick.jpg.jpg" alt="ไข้หวัดธรรมดา หรือ ไข้เลือดออก?">
-        </div>
-      </a>
-
-      <!-- e3 -->
-      <a href="3.ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย.html" class="e-card">
-        <div class="e-label">ระยะวิกฤต: ไข้ลดไม่ได้แปลว่าหาย</div>
-        <div class="e-box">
-          <img src="รูป/img_warn.jpg.png" alt="ระยะวิกฤต: ไข้ลดไม่ได้แปลว่าหาย">
-        </div>
-      </a>
-
+    <!-- Emergency Call Bar -->
+    <div class="emergency-strip" role="alert">
+      <div>🚨 <strong>เจ็บป่วยฉุกเฉินวิกฤต หรือสงสัยภาวะช็อก:</strong> สังเกตอาการมือเท้าเย็น กระสับกระส่าย ปวดท้องรุนแรง เลือดออก</div>
+      <div style="display: flex; gap: 8px;">
+        <a href="tel:1669">📞 โทร 1669 (ฟรี 24 ชม.)</a>
+        <a href="tel:1422" style="background: #FFD166;">สายด่วนควบคุมโรค 1422</a>
+      </div>
     </div>
 
-    <!-- แถวล่าง: e4, e5 -->
-    <div class="row-bottom">
-      
-      <!-- e4 -->
-      <a href="4.ยาที่ห้ามกินเด็ดขาด.html" class="e-card">
-        <div class="e-label">ยาที่ห้ามกินเด็ดขาด!</div>
-        <div class="e-box">
-          <img src="รูป/img_Treatment%20drugs.jpg.jpg" alt="ยาที่ห้ามกินเด็ดขาด!">
-        </div>
-      </a>
+    <!-- Main Hero Banner (d1) -->
+    <header class="hero-box">
+      <span class="hero-tag">🌟 คู่มือสุขภาพ &amp; ระบบคัดกรองเบื้องต้น</span>
+      <h1 class="hero-title">ไข้สูงอย่าเพิ่งวางใจ! ชวนมาเช็กอาการไข้เลือดออกฉบับอ่านสบาย ไม่งงแน่นอน</h1>
+      <p class="hero-subtitle">รู้ทันไวรัสเดงกี สังเกตอาการระยะวิกฤต ป้องกันการใช้ยาอันตราย และดูแลสุขภาพคนที่คุณรักอย่างปลอดภัย</p>
+    </header>
 
-      <!-- e5 -->
-      <a href="5.จุดอับในบ้านที่ยุงลายชอบวางไข่.html" class="e-card">
-        <div class="e-label">5 จุดอับในบ้านที่ยุงลายชอบวางไข่</div>
-        <div class="e-box">
-          <img src="รูป/img_shield.jpg.jpg" alt="5 จุดอับในบ้านที่ยุงลายชอบวางไข่">
+    <!-- 5 Core Educational Guides -->
+    <section aria-labelledby="guides-title">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px;">
+        <div>
+          <h2 id="guides-title" style="margin: 0; font-size: 1.4rem; color: #073B4C; font-weight: 800;">📚 5 เรื่องต้องรู้ สู้ภัยไข้เลือดออก</h2>
+          <p style="margin: 4px 0 0; color: #4A5568; font-size: 0.95rem;">คลิกเลือกหัวข้อเพื่ออ่านข้อมูลฉบับเข้าใจง่ายพร้อมภาพประกอบ</p>
         </div>
-      </a>
+      </div>
 
-    </div>
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <a href="1.ยุงลายไม่ได้กัดแค่ตอนกลางวัน.html" class="topic-card">
+          <div class="topic-header">
+            <h3 class="topic-title">ยุงลายไม่ได้กัดแค่ตอนกลางวัน</h3>
+          </div>
+          <div class="topic-image-box">
+            <img src="รูป/img_mosquito.jpg.jpg" alt="ยุงลายไม่ได้กัดแค่ตอนกลางวัน" loading="lazy">
+          </div>
+          <div class="topic-footer">
+            <span>บทที่ 1 • พฤติกรรมยุงลาย</span>
+            <span class="read-more-arrow">อ่านต่อ ➔</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="2.ไข้หวัดธรรมดา หรือ ไข้เลือดออก.html" class="topic-card">
+          <div class="topic-header">
+            <h3 class="topic-title">ไข้หวัดธรรมดา หรือ ไข้เลือดออก?</h3>
+          </div>
+          <div class="topic-image-box">
+            <img src="รูป/img_sick.jpg.jpg" alt="ไข้หวัดธรรมดา หรือ ไข้เลือดออก?" loading="lazy">
+          </div>
+          <div class="topic-footer">
+            <span>บทที่ 2 • ตารางเปรียบเทียบอาการ</span>
+            <span class="read-more-arrow">อ่านต่อ ➔</span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="3.ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย.html" class="topic-card">
+          <div class="topic-header">
+            <h3 class="topic-title">ระยะวิกฤต: ไข้ลดไม่ได้แปลว่าหาย</h3>
+          </div>
+          <div class="topic-image-box">
+            <img src="รูป/img_warn.jpg.png" alt="ระยะวิกฤต: ไข้ลดไม่ได้แปลว่าหาย" loading="lazy">
+          </div>
+          <div class="topic-footer">
+            <span>บทที่ 3 • สัญญาณอันตราย</span>
+            <span class="read-more-arrow">อ่านต่อ ➔</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="cards-grid-bottom" style="margin-top: 20px;">
+        <!-- Card 4 -->
+        <a href="4.ยาที่ห้ามกินเด็ดขาด.html" class="topic-card">
+          <div class="topic-header">
+            <h3 class="topic-title">ยาที่ห้ามกินเด็ดขาด!</h3>
+          </div>
+          <div class="topic-image-box">
+            <img src="รูป/img_Treatment%20drugs.jpg.jpg" alt="ยาที่ห้ามกินเด็ดขาด!" loading="lazy">
+          </div>
+          <div class="topic-footer">
+            <span>บทที่ 4 • ข้อห้ามยาอันตราย</span>
+            <span class="read-more-arrow">อ่านต่อ ➔</span>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="5.จุดอับในบ้านที่ยุงลายชอบวางไข่.html" class="topic-card">
+          <div class="topic-header">
+            <h3 class="topic-title">5 จุดอับในบ้านที่ยุงลายชอบวางไข่</h3>
+          </div>
+          <div class="topic-image-box">
+            <img src="รูป/img_shield.jpg.jpg" alt="5 จุดอับในบ้านที่ยุงลายชอบวางไข่" loading="lazy">
+          </div>
+          <div class="topic-footer">
+            <span>บทที่ 5 • แหล่งกำจัดลูกน้ำ</span>
+            <span class="read-more-arrow">อ่านต่อ ➔</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Interactive Tool: Symptom Self-Assessment -->
+    <section class="section-panel" id="assessment">
+      <h2 class="panel-title">🩺 แบบประเมินอาการและความเสี่ยงไข้เลือดออกเบื้องต้น</h2>
+      <p class="panel-description">ติ๊กเลือกอาการที่คุณหรือผู้ป่วยกำลังเป็นอยู่ขณะนี้ เพื่อประเมินระดับความเร่งด่วนและแนวทางปฏิบัติ</p>
+
+      <div class="symptom-list">
+        <label class="symptom-item">
+          <input type="checkbox" data-danger="false">
+          <span class="symptom-text">🔥 มีไข้สูงลอยเฉียบพลัน 38.5–40°C ติดต่อกันเกิน 2–3 วัน กินยาลดไข้แล้วไข้ไม่ค่อยลด</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" data-danger="false">
+          <span class="symptom-text">👀 ปวดศีรษะรุนแรง หรือปวดกระบอกตาลึกๆ เมื่อกลอกตา</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" data-danger="false">
+          <span class="symptom-text">🦴 ปวดเมื่อยตามกล้ามเนื้อ ปวดข้อกระดูกทั้งตัว คล้ายกระดูกจะหัก</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" data-danger="false">
+          <span class="symptom-text">🤢 คลื่นไส้ เบื่ออาหาร อาเจียน หรือรับประทานอาหารไม่ได้</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" data-danger="false">
+          <span class="symptom-text">🔴 มีจุดเลือดออกสีแดงเล็กๆ ใต้ผิวหนัง ตามแขน ขา ลำตัว หรือหน้าอก</span>
+        </label>
+        <label class="symptom-item danger-symptom">
+          <input type="checkbox" data-danger="true">
+          <span class="symptom-text">⚠️ ปวดท้องรุนแรง กดเจ็บบริเวณใต้ชายโครงขวา (ตับโต) <span class="symptom-badge-danger">วิกฤต</span></span>
+        </label>
+        <label class="symptom-item danger-symptom">
+          <input type="checkbox" data-danger="true">
+          <span class="symptom-text">⚠️ มือเท้าเย็น ตัวเย็นชืด เหงื่อออก ตัวซีด หรือชีพจรเต้นเบาเร็ว <span class="symptom-badge-danger">วิกฤต</span></span>
+        </label>
+        <label class="symptom-item danger-symptom">
+          <input type="checkbox" data-danger="true">
+          <span class="symptom-text">⚠️ มีเลือดกำเดาไหล เลือดออกตามไรฟัน อาเจียนเป็นเลือด หรือถ่ายอุจจาระสีดำ <span class="symptom-badge-danger">วิกฤต</span></span>
+        </label>
+        <label class="symptom-item danger-symptom">
+          <input type="checkbox" data-danger="true">
+          <span class="symptom-text">⚠️ ซึมลงอย่างเห็นได้ชัด พูดจาไม่รู้เรื่อง หรือกระสับกระส่ายผิดปกติ <span class="symptom-badge-danger">วิกฤต</span></span>
+        </label>
+      </div>
+
+      <div id="assessmentResult" class="assessment-result result-low">
+        <h3 id="resultTitle" class="result-title">🟢 ยังไม่พบอาการผิดปกติที่ชัดเจน (Normal / Low Risk)</h3>
+        <p id="resultAdvice" class="result-advice">ยังไม่มีการติ๊กเลือกอาการใด หากมีไข้ควรดื่มน้ำสะอาด พักผ่อนให้เพียงพอ และเช็ดตัวลดไข้เป็นระยะ</p>
+      </div>
+    </section>
+
+    <!-- Paracetamol Dosage Calculator -->
+    <section class="section-panel" id="calculator">
+      <h2 class="panel-title">⚖️ เครื่องคำนวณขนาดยาลดไข้พาราเซตามอลที่ปลอดภัย</h2>
+      <p class="panel-description">คำนวณปริมาณยาที่เหมาะสมตามน้ำหนักตัว (10–15 มก./กก./ครั้ง) เพื่อป้องกันตับวายและอันตรายจากยาเกินขนาด</p>
+
+      <div class="calc-container">
+        <div class="calc-input-group">
+          <label for="patientWeight" style="font-weight: 700; font-size: 1rem;">น้ำหนักตัวของผู้ป่วย:</label>
+          <input type="number" id="patientWeight" placeholder="เช่น 55" min="3" max="150" step="1">
+          <span style="font-weight: 700;">กิโลกรัม (kg)</span>
+        </div>
+
+        <div class="calc-result-box">
+          <div class="calc-result-title">ผลการคำนวณปริมาณยา:</div>
+          <div id="dosageOutput" class="calc-result-text">กรุณาระบุน้ำหนักตัวเพื่อดูขนาดยาที่แนะนำ</div>
+        </div>
+
+        <div style="background: #FFE0E6; border: 2px solid #EF476F; border-radius: 12px; padding: 14px 18px; font-weight: 600; color: #8C1833;">
+          🚫 <strong>คำเตือนเรื่องยา:</strong> เด็ดขาด! ห้ามทานยากลุ่มแก้ปวดอักเสบที่ไม่ใช่สเตียรอยด์ (NSAIDs) เช่น ไอบูโพรเฟน (Ibuprofen), แอสไพริน (Aspirin), เมเฟนามิก (Ponstan) เพราะจะทำให้เกล็ดเลือดทำงานผิดปกติ เลือดออกในกระเพาะอาหารจนช็อกเสียชีวิตได้!
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Home Inspection Checklist -->
+    <section class="section-panel" id="checklist">
+      <h2 class="panel-title">🏡 เช็กลิสต์สำรวจ 5 จุดเสี่ยงยุงลายรอบบ้าน</h2>
+      <p class="panel-description">สำรวจบ้านของคุณทุกสัปดาห์ แล้วติ๊กกำจัดแหล่งเพาะพันธุ์ตามมาตรการ 3 เก็บ ป้องกัน 3 โรค</p>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px;">
+          <span id="inspectProgress">สำรวจและกำจัดแล้ว 0/5 จุด (0%)</span>
+          <span style="color: #0F382C;">เป้าหมาย: ปลอดลูกน้ำ 100%</span>
+        </div>
+        <div style="width: 100%; height: 14px; background: #E2E8F0; border: 2px solid #1A1A1A; border-radius: 999px; overflow: hidden;">
+          <div id="inspectProgressBar" style="width: 0%; height: 100%; background: #06D6A0; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <label class="symptom-item">
+          <input type="checkbox" class="inspect-checkbox">
+          <span class="symptom-text">🪴 <strong>1. จานรองกระถางต้นไม้:</strong> เทน้ำขังทิ้งทุก 7 วัน หรือใส่ทรายขัดไม่ให้น้ำขัง</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" class="inspect-checkbox">
+          <span class="symptom-text">🛞 <strong>2. ยางรถยนต์เก่า / เศษขยะนอกบ้าน:</strong> เก็บทำลายหรือเจาะรูระบายน้ำ ไม่ให้มีน้ำขัง</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" class="inspect-checkbox">
+          <span class="symptom-text">💐 <strong>3. แจกันดอกไม้ / หิ้งพระ:</strong> ล้างเปลี่ยนน้ำใหม่ทุกวันพระหรือทุกสัปดาห์</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" class="inspect-checkbox">
+          <span class="symptom-text">🪣 <strong>4. โอ่งน้ำ / ถังเก็บน้ำใช้:</strong> ปิดฝาให้มิดชิด หรือใส่ปลากินลูกน้ำ หรือทรายอะเบท (Abate)</span>
+        </label>
+        <label class="symptom-item">
+          <input type="checkbox" class="inspect-checkbox">
+          <span class="symptom-text">🐜 <strong>5. ขารองตู้กับข้าว:</strong> เติมเกลือแกง ผงซักฟอก หรือน้ำส้มสายชู เพื่อไม่ให้ยุงลายวางไข่</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Netlify Form: Community Mosquito Risk Reporter -->
+    <section class="netlify-form-panel" id="community-report">
+      <h2 class="panel-title">📢 แจ้งเตือนจุดเสี่ยงแหล่งเพาะพันธุ์ยุงลายในชุมชน</h2>
+      <p class="panel-description">พบแหล่งน้ำขัง พื้นที่รกร้าง หรือจุดที่มีลูกน้ำยุงลายชุกชุมในโรงเรียนหรือชุมชน ส่งข้อมูลแจ้งเตือนเพื่อประสานงานป้องกัน</p>
+
+      <div id="formAlert" class="form-alert" role="status"></div>
+
+      <form id='communityReportForm' method='POST' name='mosquito-risk-report'>
+        <input type="hidden" name="form-name" value="mosquito-risk-report">
+        <p style="display:none">
+          <label>Don't fill this out: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-grid">
+          <div>
+            <label class="form-label" for="reporterName">ชื่อผู้แจ้ง / นักศึกษา / หน่วยงาน *</label>
+            <input class="form-input" type="text" id="reporterName" name="reporterName" placeholder="ระบุชื่อ-นามสกุล" required>
+          </div>
+
+          <div>
+            <label class="form-label" for="contactPhone">เบอร์โทรศัพท์ติดต่อกลับ *</label>
+            <input class="form-input" type="tel" id="contactPhone" name="contactPhone" placeholder="08x-xxx-xxxx" required>
+          </div>
+
+          <div>
+            <label class="form-label" for="locationArea">สถานที่พบจุดเสี่ยง (ชุมชน / อาคาร / ซอย) *</label>
+            <input class="form-input" type="text" id="locationArea" name="locationArea" placeholder="เช่น บริเวณลานจอดรถ อาคารเรียน 3" required>
+          </div>
+
+          <div>
+            <label class="form-label" for="hazardType">ประเภทของจุดเสี่ยง *</label>
+            <select class="form-select" id="hazardType" name="hazardType" required>
+              <option value="water-container">ภาชนะหรือโอ่งน้ำไม่มีฝาปิด</option>
+              <option value="tires-trash">ยางรถยนต์เก่าหรือเศษขยะน้ำขัง</option>
+              <option value="plant-saucer">จานรองกระถางต้นไม้</option>
+              <option value="drainage">ท่อระบายน้ำหรือรางน้ำฝนอุดตัน</option>
+              <option value="other">จุดเสี่ยงอื่นๆ</option>
+            </select>
+          </div>
+
+          <div class="form-group-full">
+            <label class="form-label" for="details">รายละเอียดเพิ่มเติม / สภาพแวดล้อม</label>
+            <textarea class="form-textarea" id="details" name="details" placeholder="อธิบายสภาพจุดเสี่ยง เช่น พบลูกน้ำยุงลายจำนวนมาก ยุงชุกชุม..."></textarea>
+          </div>
+
+          <div class="form-group-full">
+            <button type="submit" class="btn-submit">📨 ส่งข้อมูลรายงานจุดเสี่ยง</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-hotlines">
+        <span>🚑 สายด่วนการแพทย์ฉุกเฉิน: <strong>1669</strong></span>
+        <span>•</span>
+        <span>🦠 สายด่วนกรมควบคุมโรค: <strong>1422</strong></span>
+        <span>•</span>
+        <span>🏥 สายด่วน สปสช.: <strong>1330</strong></span>
+      </div>
+      <p style="margin: 0; font-size: 0.85rem; color: #4A5568;">
+        โครงการให้ความรู้สุขภาพโรคไข้เลือดออกเดงกี • พัฒนาเพื่อการเผยแพร่ความรู้และการเรียนรู้ตามแนวคิด Jamstack &amp; Modern Web บน Netlify
+      </p>
+    </footer>
 
   </div>
+
+  <script type="module">
+    import { setupUserNavbar } from "./assets/js/auth.js";
+    setupUserNavbar();
+  </script>
+  <script src="assets/js/assessment.js"></script>
 
 </body>
 </html>
+

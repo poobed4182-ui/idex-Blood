@@ -1,182 +1,92 @@
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>หน้ารายละเอียดหัวข้อย่อย</title>
-  <style>
-    body {
-      font-family: 'Sarabun', 'Prompt', sans-serif;
-      background-color: #FF9F1C;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    /* คอนเทนเนอร์หลักสำหรับจัดวางเลย์เอาต์ */
-    .page-container {
-      width: 100%;
-      max-width: 850px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    /* จัดส่วนแถวบน (b1 และ b3) ให้อยู่ในแนวเดียวกัน */
-    .top-row {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    /* กรอบ b1: ช่องใส่ไอคอน */
-    .b1-box {
-      width: 80px;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0; /* ป้องกันไม่ให้ไอคอนโดนบีบขนาด */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b1-box img {
-      max-width: 60%;
-      max-height: 60%;
-      object-fit: contain;
-    }
-
-    /* กรอบ b3: ชื่อหัวข้อย่อย */
-    .b3-box {
-      flex: 1;
-      height: 80px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      padding: 0 25px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .b3-title {
-      color: #0F382C;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    /* กรอบ b2: รายละเอียดและข้อมูล */
-    .b2-box {
-      width: 100%;
-      min-height: 450px;
-      background-color: #06D6A0;
-      border: 3px solid #1a1a1a;
-      border-radius: 24px;
-      padding: 35px;
-      box-sizing: border-box;
-      color: #1a1a1a;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .b2-content {
-      font-size: 18px;
-      color: #1a1a1a;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .b2-content h3 {
-      font-size: 20px;
-      margin-top: 0;
-      margin-bottom: 8px;
-      color: #000000;
-      font-weight: bold;
-    }
-
-    .b2-content p {
-      font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .divider {
-      border: none;
-      border-top: 2px dashed #1a1a1a;
-      opacity: 0.3;
-      margin: 20px 0;
-    }
-
-    /* ปุ่มย้อนกลับ (ใส่เพิ่มให้ออปชันสำหรับลิงก์กลับหน้าหลัก) */
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: #F8F9FA;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .back-btn:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 480px) {
-      .top-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .b1-box {
-        align-self: center;
-      }
-    }
-  </style>
+  <title>ยุงลายไม่ได้กัดแค่ตอนกลางวัน | idex-Blood</title>
+  <meta name="description" content="ความจริงเกี่ยวกับยุงลาย พฤติกรรมการกัดตลอด 24 ชั่วโมง และภัยร้ายของการติดเชื้อไวรัสเดงกีซ้ำต่างสายพันธุ์">
+  <meta property="og:site_name" content="idex-Blood เช็กอาการไข้เลือดออก">
+  <meta property="og:title" content="ยุงลายไม่ได้กัดแค่ตอนกลางวัน | idex-Blood">
+  <meta property="og:description" content="ยุงลายสามารถกัดและแพร่เชื้อได้ตลอด 24 ชั่วโมง โดยเฉพาะในบริเวณที่มืด อับลม หรือใต้โต๊ะทำงาน พร้อมภัยร้ายของการติดเชื้อซ้ำ 4 สายพันธุ์">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦟</text></svg>">
 </head>
 <body>
 
-  <div class="page-container">
+  <!-- Top User & Account Menu -->
+  <nav id="accountMenu" class="account-nav" aria-label="เมนูผู้ใช้งาน" hidden></nav>
+
+  <div class="page-wrapper">
     
-    <!-- ปุ่มย้อนกลับไปหน้าหลัก (ถ้าต้องการใช้) -->
     <div>
-      <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+      <a class='btn-nav' href='/'>← กลับหน้าหลัก</a>
     </div>
 
-    <!-- แถวบน: b1 (ไอคอน) และ b3 (หัวข้อ) -->
-    <div class="top-row">
-      
-      <!-- b1: ช่องใส่ไอคอน -->
-      <div class="b1-box">
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="article-icon-box">
         <img src="https://api.iconify.design/lucide:shield-alert.svg?color=%230F382C" alt="icon">
       </div>
+      <div class="article-title-box">
+        <h1>ยุงลายไม่ได้กัดแค่ตอนกลางวัน</h1>
+      </div>
+    </header>
 
-      <!-- b3: ชื่อหัวข้อย่อย -->
-      <div class="b3-box">
-        <h2 class="b3-title">ยุงลายไม่ได้กัดแค่ตอนกลางวัน</h2>
+    <!-- Main Article Body -->
+    <article class="article-content-card">
+      <div style="font-size: 1.1rem; line-height: 1.8;">
+        
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 24px; background: #fff; padding: 16px; border-radius: 16px; border: 2px solid #1a1a1a;">
+          <img src="รูป/img_mosquito.jpg.jpg" alt="ยุงลายตัวพาหะนำโรค" style="width: 140px; height: 110px; object-fit: cover; border-radius: 12px; border: 2px solid #1a1a1a;">
+          <div style="flex: 1; min-width: 240px;">
+            <span style="background: #FFD166; padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; border: 1.5px solid #1a1a1a;">บทที่ 1 จาก 5</span>
+            <h2 style="margin: 6px 0; font-size: 1.3rem; color: #0F382C;">ยุงลายพาหะนำโรคไข้เลือดออก (Aedes aegypti)</h2>
+            <p style="margin: 0; font-size: 0.95rem; color: #4A5568;">ความเชื่อเดิมที่ว่ายุงลายกัดเฉพาะกลางวันอาจทำให้คุณประมาท</p>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.35rem; margin-top: 0; margin-bottom: 10px; color: #000; font-weight: 800;">
+          🦟 ความจริงเกี่ยวกับยุงลาย
+        </h3>
+        <p style="margin-bottom: 20px; font-size: 1.05rem;">
+          แม้ยุงลายจะออกหากินหลักๆ ช่วงเช้าและเย็น แต่ในชีวิตประจำวัน <strong>ยุงลายสามารถกัดและแพร่เชื้อได้ตลอด 24 ชั่วโมง</strong> โดยเฉพาะในบริเวณที่มืด อับลม ใต้โต๊ะทำงาน ในห้องเรียน ห้องน้ำ หรือมุมห้องที่มีแสงสว่างน้อย ยุงลายจะเกาะพักและพร้อมบินมากัดดูดเลือดได้ตลอดเวลา
+        </p>
+
+        <hr style="border: none; border-top: 2px dashed #1a1a1a; opacity: 0.3; margin: 24px 0;">
+
+        <h3 style="font-size: 1.35rem; margin-top: 0; margin-bottom: 10px; color: #881337; font-weight: 800;">
+          ⚠️ ภัยร้ายของการติดเชื้อซ้ำ (Secondary Dengue Infection)
+        </h3>
+        <p style="margin-bottom: 20px; font-size: 1.05rem;">
+          เชื้อไวรัสเดงกี (Dengue Virus) มีทั้งหมด <strong>4 สายพันธุ์ (DENV-1, DENV-2, DENV-3, DENV-4)</strong> การเคยป่วยเป็นไข้เลือดออกแล้ว ไม่ได้แปลว่าจะมีภูมิคุ้มกันตลอดไป เพราะร่างกายจะมีภูมิคุ้มกันถาวรเฉพาะสายพันธุ์ที่เคยเป็นเท่านั้น
+        </p>
+        <div style="background: #FFF; border: 2.5px solid #1A1A1A; border-radius: 16px; padding: 18px 22px; margin-bottom: 20px;">
+          <h4 style="margin: 0 0 8px; color: #EF476F; font-size: 1.15rem;">ทำไมการติดเชื้อครั้งที่ 2 ถึงอันตรายกว่าเดิมหลายเท่า?</h4>
+          <p style="margin: 0; font-size: 0.98rem; line-height: 1.6;">
+            หากติดเชื้อซ้ำต่างสายพันธุ์ ระบบภูมิคุ้มกันเดิมจะเกิดปฏิกิริยาต่อต้านที่ผิดปกติ (Antibody-Dependent Enhancement - ADE) แทนที่จะกำจัดไวรัส กลับส่งเสริมให้ไวรัสเข้าสู่เซลล์เม็ดเลือดขาวได้มากขึ้น ส่งผลให้เกิดภาวะเลือดออกง่าย พลาสมาในเลือดรั่ว และมีความเสี่ยงต่อภาวะช็อกรุนแรงกว่าครั้งแรกเป็นอย่างมาก
+          </p>
+        </div>
+
+        <div style="background: #FFD166; border: 2px solid #1A1A1A; border-radius: 12px; padding: 14px 18px; font-weight: 700; color: #1A1A1A;">
+          💡 <strong>เกร็ดการป้องกัน:</strong> ทายากันยุงหรือโลชั่นกันยุงแม้จะอยู่ในอาคารหรือห้องทำงาน และสวมเสื้อผ้าแขนยาวขายาวสีสว่าง
+        </div>
+
       </div>
 
-    </div>
-
-    <!-- แถวล่าง: b2 (รายละเอียดข้อมูล) -->
-    <div class="b2-box">
-      <div class="b2-content">
-        <h3>🦟 ความจริงเกี่ยวกับยุงลาย</h3>
-        <p>แม้ยุงลายจะออกหากินหลักๆ ช่วงเช้าและเย็น แต่ในชีวิตประจำวัน ยุงลายสามารถกัดและแพร่เชื้อได้ตลอด 24 ชั่วโมง โดยเฉพาะในบริเวณที่มืด อับลม หรือใต้โต๊ะทำงาน</p>
-
-        <hr class="divider">
-
-        <h3>⚠️ ภัยร้ายของการติดเชื้อซ้ำ</h3>
-        <p>เชื้อไวรัสเดงกี (Dengue) มีทั้งหมด 4 สายพันธุ์ การเคยเป็นแล้วไม่ได้แปลว่ามีภูมิคุ้มกันตลอดไป หากติดเชื้อซ้ำต่างสายพันธุ์ ระบบภูมิคุ้มกันจะทำงานผิดปกติ ทำให้เกิดภาวะเลือดออกง่ายและอาการรุนแรงกว่าครั้งแรกหลายเท่า</p>
+      <!-- Navigation Footer -->
+      <div class="article-nav-buttons">
+        <a class='btn-nav' href='/'>🏠 หน้าแรก</a>
+        <a href="2.ไข้หวัดธรรมดา หรือ ไข้เลือดออก.html" class="btn-nav" style="background: #FFD166;">บทถัดไป: ไข้หวัดธรรมดา หรือ ไข้เลือดออก? ➔</a>
       </div>
-    </div>
+    </article>
 
   </div>
-  
+
+  <script type="module">
+    import { setupUserNavbar } from "./assets/js/auth.js";
+    setupUserNavbar();
+  </script>
+
 </body>
 </html>
+

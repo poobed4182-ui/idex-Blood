@@ -1,0 +1,58 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/login.php"
+  to = "/login.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/logout.php"
+  to = "/logout.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index-gate.php"
+  to = "/index.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menu.php"
+  to = "/index.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guide/1"
+  to = "/1.ยุงลายไม่ได้กัดแค่ตอนกลางวัน.html"
+  status = 200
+
+[[redirects]]
+  from = "/guide/2"
+  to = "/2.ไข้หวัดธรรมดา หรือ ไข้เลือดออก.html"
+  status = 200
+
+[[redirects]]
+  from = "/guide/3"
+  to = "/3.ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย.html"
+  status = 200
+
+[[redirects]]
+  from = "/guide/4"
+  to = "/4.ยาที่ห้ามกินเด็ดขาด.html"
+  status = 200
+
+[[redirects]]
+  from = "/guide/5"
+  to = "/5.จุดอับในบ้านที่ยุงลายชอบวางไข่.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"

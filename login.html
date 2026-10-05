@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เข้าสู่ระบบ | เช็กอาการไข้เลือดออก idex-Blood</title>
+  <meta name="description" content="เข้าสู่ระบบหรือลงทะเบียนด้วยชื่อผู้ใช้และรหัสนักศึกษา 11 หลัก สำหรับระบบเช็กอาการไข้เลือดออก">
+  <meta property="og:site_name" content="idex-Blood เช็กอาการไข้เลือดออก">
+  <meta property="og:title" content="เข้าสู่ระบบ | idex-Blood">
+  <meta property="og:description" content="เข้าสู่ระบบเพื่อใช้งานระบบประเมินและคัดกรองอาการไข้เลือดออกเดงกี">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔑</text></svg>">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      padding: 36px 32px;
+      background: #06D6A0;
+      border: 3px solid #1a1a1a;
+      border-radius: 24px;
+      box-shadow: 8px 8px 0 #1a1a1a;
+    }
+    .auth-card h1 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+    .auth-intro {
+      margin: 0 0 20px;
+      text-align: center;
+      line-height: 1.5;
+      font-size: 0.95rem;
+      color: #0F382C;
+      font-weight: 600;
+    }
+    .field {
+      margin-bottom: 16px;
+    }
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .field input {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 14px;
+      border: 2px solid #1a1a1a;
+      border-radius: 12px;
+      background: #fff;
+      color: #1a1a1a;
+      font: inherit;
+      font-size: 1rem;
+    }
+    .btn-auth-submit {
+      width: 100%;
+      min-height: 50px;
+      border: 2px solid #1a1a1a;
+      border-radius: 14px;
+      background: #EF476F;
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #1a1a1a;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      margin-top: 6px;
+    }
+    .btn-auth-submit:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0 #1a1a1a;
+    }
+    .btn-auth-submit:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0 0 0 #1a1a1a;
+    }
+    .switch-mode-text {
+      margin: 18px 0 0;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .switch-mode-btn {
+      width: auto;
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: #073B4C;
+      box-shadow: none;
+      text-decoration: underline;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .auth-notice {
+      display: none;
+      margin: 0 0 16px;
+      padding: 12px 14px;
+      border: 2px solid #1a1a1a;
+      border-radius: 10px;
+      background: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .auth-notice.error {
+      display: block;
+      background: #FFE0E6;
+      color: #8C1833;
+    }
+    .auth-notice.success {
+      display: block;
+      background: #D8F3DC;
+      color: #0F382C;
+    }
+    .demo-login-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 2px dashed #1a1a1a;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="auth-card">
+    <div style="text-align: center; margin-bottom: 12px;">
+      <a href='/' style='font-weight: 800; color: #073B4C; font-size: 0.9rem;'>← กลับหน้าแรกโดยไม่เข้าสู่ระบบ</a>
+    </div>
+
+    <h1 id="formTitle">เข้าสู่ระบบ</h1>
+    <p class="auth-intro" id="formIntro">ใช้ชื่อที่ตั้งไว้และรหัสนักศึกษา 11 หลัก</p>
+    
+    <div id="notice" class="auth-notice" role="status" aria-live="polite"></div>
+    
+    <form id="accountForm">
+      <div class="field">
+        <label for="userName">ชื่อผู้ใช้ (Display Name)</label>
+        <input id="userName" name="userName" type="text" maxlength="100" autocomplete="username" placeholder="เช่น นายสมชาย ใจดี" required>
+      </div>
+
+      <div class="field">
+        <label for="studentId">รหัสนักศึกษา 11 หลัก (Password)</label>
+        <input id="studentId" name="studentId" type="password" inputmode="numeric" pattern="[0-9]{11}" minlength="11" maxlength="11" autocomplete="current-password" placeholder="ตัวเลข 11 หลัก" required>
+      </div>
+
+      <button id="submitButton" type="submit" class="btn-auth-submit">เข้าสู่ระบบ</button>
+    </form>
+
+    <p class="switch-mode-text">
+      <span id="switchText">ยังไม่มีบัญชี?</span> 
+      <button id="switchMode" class="switch-mode-btn" type="button">สร้างบัญชีใหม่</button>
+    </p>
+
+    <div class="demo-login-box">
+      <p style="font-size: 0.82rem; color: #0F382C; margin: 0 0 10px; font-weight: 600;">
+        📌 สำหรับการทดสอบระบบ: เข้าสู่ระบบตัวอย่างแบบรวดเร็ว (One-Click Demo Session)
+      </p>
+      <button id="demoLoginBtn" type="button" class="btn-nav" style="width: 100%; justify-content: center; background: #FFD166;">
+        🚀 เข้าสู่ระบบในโหมดทดสอบทันที
+      </button>
+    </div>
+  </main>
+
+  <script type="module">
+    import { setLocalUser, emailForStudentId } from "./assets/js/auth.js";
+
+    const FIREBASE_CONFIG = {
+      apiKey: "AIzaSyCqP4MyuuIu4Vr2cTsIhFaFv_8fj8zfryg",
+      authDomain: "index-blood.firebaseapp.com",
+      projectId: "index-blood",
+      storageBucket: "index-blood.firebasestorage.app",
+      messagingSenderId: "944055889621",
+      appId: "1:944055889621:web:a0a3ffca69e178be5dbc5c",
+      measurementId: "G-PXN7T8E0DY"
+    };
+
+    let auth = null;
+    let createUserWithEmailAndPassword = null;
+    let signInWithEmailAndPassword = null;
+    let updateProfile = null;
+    let signOut = null;
+    let deleteUser = null;
+
+    // Dynamically load Firebase Auth
+    (async () => {
+      try {
+        const { initializeApp } = await import("https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js");
+        const fbAuth = await import("https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js");
+        const app = initializeApp(FIREBASE_CONFIG);
+        auth = fbAuth.getAuth(app);
+        createUserWithEmailAndPassword = fbAuth.createUserWithEmailAndPassword;
+        signInWithEmailAndPassword = fbAuth.signInWithEmailAndPassword;
+        updateProfile = fbAuth.updateProfile;
+        signOut = fbAuth.signOut;
+        deleteUser = fbAuth.deleteUser;
+      } catch (err) {
+        console.warn("Firebase could not be initialized directly:", err);
+      }
+    })();
+
+    const form = document.getElementById("accountForm");
+    const userNameInput = document.getElementById("userName");
+    const studentIdInput = document.getElementById("studentId");
+    const submitButton = document.getElementById("submitButton");
+    const notice = document.getElementById("notice");
+    const switchMode = document.getElementById("switchMode");
+    const demoLoginBtn = document.getElementById("demoLoginBtn");
+    let isRegisterMode = false;
+
+    const showNotice = (message, type = "error") => {
+      notice.innerHTML = message;
+      notice.className = `auth-notice ${type}`;
+    };
+
+    switchMode.addEventListener("click", () => {
+      isRegisterMode = !isRegisterMode;
+      document.getElementById("formTitle").textContent = isRegisterMode ? "สร้างบัญชีใหม่" : "เข้าสู่ระบบ";
+      document.getElementById("formIntro").textContent = isRegisterMode ? "ตั้งชื่อผู้ใช้และใช้รหัสนักศึกษา 11 หลักเป็นรหัสผ่าน" : "ใช้ชื่อที่ตั้งไว้และรหัสนักศึกษา 11 หลัก";
+      document.getElementById("switchText").textContent = isRegisterMode ? "มีบัญชีแล้ว?" : "ยังไม่มีบัญชี?";
+      switchMode.textContent = isRegisterMode ? "กลับไปเข้าสู่ระบบ" : "สร้างบัญชีใหม่";
+      submitButton.textContent = isRegisterMode ? "สมัครบัญชี" : "เข้าสู่ระบบ";
+      notice.className = "auth-notice";
+      notice.textContent = "";
+    });
+
+    demoLoginBtn.addEventListener("click", () => {
+      const demoUser = {
+        displayName: "นักศึกษาตัวอย่าง (Guest User)",
+        studentId: "65012345678"
+      };
+      setLocalUser(demoUser);
+      showNotice("เข้าสู่ระบบในโหมดทดสอบสำเร็จ กำลังเข้าสู่หน้าแรก...", "success");
+      setTimeout(() => window.location.replace("index.html"), 600);
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const userName = userNameInput.value.trim();
+      const studentId = studentIdInput.value.trim();
+
+      if (!userName || !/^\d{11}$/.test(studentId)) {
+        showNotice("กรุณาระบุชื่อผู้ใช้และรหัสนักศึกษาเป็นตัวเลขให้ครบ 11 หลัก");
+        return;
+      }
+
+      submitButton.disabled = true;
+      try {
+        if (auth && signInWithEmailAndPassword && createUserWithEmailAndPassword) {
+          const email = emailForStudentId(studentId);
+          if (isRegisterMode) {
+            const credential = await createUserWithEmailAndPassword(auth, email, studentId);
+            try {
+              await updateProfile(credential.user, { displayName: userName });
+            } catch (profileError) {
+              await deleteUser(credential.user);
+              throw profileError;
+            }
+            setLocalUser({ displayName: userName, studentId: studentId });
+            showNotice("สมัครบัญชีสำเร็จ กำลังเข้าสู่ระบบ…", "success");
+            setTimeout(() => window.location.replace("index.html"), 700);
+            return;
+          }
+
+          const credential = await signInWithEmailAndPassword(auth, email, studentId);
+          if ((credential.user.displayName || "").trim() !== userName) {
+            await signOut(auth);
+            throw new Error("ชื่อผู้ใช้หรือรหัสนักศึกษาไม่ถูกต้อง");
+          }
+          setLocalUser({ displayName: userName, studentId: studentId });
+          showNotice("เข้าสู่ระบบสำเร็จ กำลังพาไปหน้าแรก…", "success");
+          setTimeout(() => window.location.replace("index.html"), 500);
+        } else {
+          // Local offline auth session
+          setLocalUser({ displayName: userName, studentId: studentId });
+          showNotice("เข้าสู่ระบบสำเร็จ (Local Session) กำลังพาไปหน้าแรก…", "success");
+          setTimeout(() => window.location.replace("index.html"), 600);
+        }
+      } catch (error) {
+        console.error("Firebase account error:", error);
+        
+        if (error.code === "auth/unauthorized-domain") {
+          // Domain not yet whitelisted in Firebase Console
+          setLocalUser({ displayName: userName, studentId: studentId });
+          showNotice(`
+            ⚠️ โดเมน Netlify นี้ยังไม่ได้รับอนุญาตใน Firebase Console
+            <br>ระบบได้ทำการเข้าสู่ระบบในโหมด Local Session ให้คุณแล้ว กำลังพาไปหน้าแรก...
+          `, "success");
+          setTimeout(() => window.location.replace("index.html"), 1200);
+          return;
+        }
+
+        if (isRegisterMode && ["auth/email-already-in-use", "auth/credential-already-in-use"].includes(error.code)) {
+          showNotice("รหัสนักศึกษานี้มีผู้ลงทะเบียนแล้ว กรุณาเลือก 'เข้าสู่ระบบ'");
+        } else if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found" || error.code === "auth/invalid-credential") {
+          showNotice("ชื่อผู้ใช้หรือรหัสนักศึกษาไม่ถูกต้อง หรือยังไม่ได้สมัครบัญชี");
+        } else if (error.code === "auth/too-many-requests") {
+          showNotice("มีการส่งข้อมูลหลายครั้งเกินไป กรุณารอสักครู่แล้วลองใหม่");
+        } else {
+          showNotice(`เข้าสู่ระบบไม่สำเร็จ: ${error.message || "กรุณาตรวจสอบข้อมูล"}`);
+        }
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
+

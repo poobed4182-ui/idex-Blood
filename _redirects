@@ -1,0 +1,9 @@
+/login.php    /login.html   301!
+/logout.php   /logout.html  301!
+/index-gate.php /index.html 301!
+/menu.php     /index.html   301!
+/guide/1      /1.ยุงลายไม่ได้กัดแค่ตอนกลางวัน.html 200
+/guide/2      /2.ไข้หวัดธรรมดา หรือ ไข้เลือดออก.html 200
+/guide/3      /3.ระยะวิกฤต ไข้ลดไม่ได้แปลว่าหาย.html 200
+/guide/4      /4.ยาที่ห้ามกินเด็ดขาด.html 200
+/guide/5      /5.จุดอับในบ้านที่ยุงลายชอบวางไข่.html 200
